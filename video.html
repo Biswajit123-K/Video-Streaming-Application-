@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watch Video - YTube</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ff0033'><path d='M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z'/></svg>">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome 6 Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Application Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="watch-page">
+    <!-- Top Navigation Bar -->
+    <header class="Navbar">
+        <div class="nav-left">
+            <button class="icon-btn menu-bar" aria-label="Toggle Navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <a href="index.html" class="brand-logo" title="YTube Home">
+                <i class="fa-brands fa-youtube logo-icon"></i>
+                <span class="brand-text">YTube</span>
+                <span class="country-code">IN</span>
+            </a>
+        </div>
+
+        <div class="nav-middle">
+            <div class="search-box">
+                <input type="text" placeholder="Search tutorials, tech stacks, channels..." class="input-box" aria-label="Search">
+                <button class="clear-search-btn" title="Clear search"><i class="fa-solid fa-xmark"></i></button>
+                <button class="search-icon-btn" title="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+            <button class="mic-btn" title="Search with your voice" aria-label="Voice Search">
+                <i class="fa-solid fa-microphone"></i>
+            </button>
+        </div>
+
+        <div class="nav-right">
+            <button class="icon-btn upload-icon-btn" title="Upload Video" aria-label="Upload Video">
+                <i class="fa-solid fa-video"></i>
+            </button>
+            <div class="notification-wrapper">
+                <button class="icon-btn notification-icon-btn" title="Notifications" aria-label="Notifications">
+                    <i class="fa-regular fa-bell"></i>
+                    <span class="badge-count">3</span>
+                </button>
+                <!-- Notification Dropdown -->
+                <div class="dropdown-panel" id="notificationDropdown">
+                    <div class="dropdown-header">
+                        <h3>Notifications</h3>
+                        <button class="icon-btn" style="font-size: 14px;"><i class="fa-solid fa-gear"></i></button>
+                    </div>
+                    <div class="dropdown-body">
+                        <div class="notification-item">
+                            <img src="https://coderarmy.in/assets/images/rohit_negi.png" alt="Channel">
+                            <div class="notif-content">
+                                <p><strong>Coder Army</strong> uploaded: <em>"What is CSS | Complete Tutorial"</em></p>
+                                <span>2 hours ago</span>
+                            </div>
+                        </div>
+                        <div class="notification-item">
+                            <img src="https://yt3.googleusercontent.com/FEcjRtez5od8UowDo6tTt9WlE-MrIFEmcwPMTORmK9Swk6KCklOmA3xfIG9WuLWfNYfNThQE=s160-c-k-c0x00ffffff-no-rj" alt="Channel">
+                            <div class="notif-content">
+                                <p><strong>Apna College</strong> announced: <em>"New Complete AI/ML Batch is live!"</em></p>
+                                <span>5 hours ago</span>
+                            </div>
+                        </div>
+                        <div class="notification-item">
+                            <img src="https://yt3.googleusercontent.com/ytc/AIdro_mZfqpNqtGLksLQfMbW7UVFgub_poGNE-YU_RAoV_NdUII=s160-c-k-c0x00ffffff-no-rj" alt="Channel">
+                            <div class="notif-content">
+                                <p><strong>FreeCodeCamp</strong> launched: <em>"React JS Crash Course 2025"</em></p>
+                                <span>1 day ago</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile Avatar & Dropdown -->
+            <button class="profile-avatar-btn" title="Your Account" aria-label="Your Account">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Virat_Kohli_in_New_Delhi_in_December_2018.jpg" alt="Profile Avatar">
+            </button>
+            <div class="dropdown-panel profile-dropdown-panel" id="profileDropdown">
+                <div class="user-profile-summary">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Virat_Kohli_in_New_Delhi_in_December_2018.jpg" alt="User Avatar">
+                    <div class="user-details">
+                        <h4>Biswajit Roy</h4>
+                        <p>@biswajit_dev</p>
+                    </div>
+                </div>
+                <div class="dropdown-menu-list">
+                    <a href="index.html"><i class="fa-regular fa-user"></i> Your channel</a>
+                    <a href="index.html"><i class="fa-solid fa-play"></i> YTube Studio</a>
+                    <a href="index.html"><i class="fa-regular fa-moon"></i> Appearance: Dark</a>
+                    <a href="index.html"><i class="fa-solid fa-gear"></i> Settings</a>
+                    <a href="index.html"><i class="fa-solid fa-arrow-right-from-bracket"></i> Sign out</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Drawer Backdrop -->
+    <div class="drawer-backdrop"></div>
+
+    <!-- Collapsible Sidebar / Drawer for watch page -->
+    <aside class="side-container">
+        <div class="drawer-header">
+            <button class="icon-btn close-drawer-btn" aria-label="Close Navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <a href="index.html" class="brand-logo" title="YTube Home">
+                <i class="fa-brands fa-youtube logo-icon"></i>
+                <span class="brand-text">YTube</span>
+                <span class="country-code">IN</span>
+            </a>
+        </div>
+        <div class="sidebar-section">
+            <a href="index.html" class="sidebar-link">
+                <i class="fa-solid fa-house"></i>
+                <p>Home</p>
+            </a>
+            <a href="#" class="sidebar-link">
+                <i class="fa-solid fa-bolt"></i>
+                <p>Shorts</p>
+            </a>
+            <a href="#" class="sidebar-link">
+                <i class="fa-solid fa-clapperboard"></i>
+                <p>Subscriptions</p>
+            </a>
+        </div>
+        <hr class="sidebar-divider">
+        <div class="sidebar-section">
+            <h4 class="sidebar-title">You</h4>
+            <a href="#" class="sidebar-link"><i class="fa-solid fa-clock-rotate-left"></i><p>History</p></a>
+            <a href="#" class="sidebar-link"><i class="fa-regular fa-clock"></i><p>Watch Later</p></a>
+            <a href="#" class="sidebar-link"><i class="fa-regular fa-thumbs-up"></i><p>Liked Videos</p></a>
+        </div>
+        <hr class="sidebar-divider">
+        <div class="sidebar-section">
+            <h4 class="sidebar-title">Subscriptions</h4>
+            <a href="video.html?id=1pcikNlDB-4" class="sidebar-link">
+                <img src="https://coderarmy.in/assets/images/rohit_negi.png" alt="Coder Army">
+                <p>Coder Army</p>
+            </a>
+            <a href="video.html?id=M7n551ot8oQ" class="sidebar-link">
+                <img src="https://yt3.googleusercontent.com/FEcjRtez5od8UowDo6tTt9WlE-MrIFEmcwPMTORmK9Swk6KCklOmA3xfIG9WuLWfNYfNThQE=s160-c-k-c0x00ffffff-no-rj" alt="Apna College">
+                <p>Apna College</p>
+            </a>
+            <a href="video.html?id=RGOj5yH7evk" class="sidebar-link">
+                <img src="https://yt3.googleusercontent.com/6tLBV-DRVemxhmanuezR5HkHshX2g7Y46Rq8cysyO1V-nd2SaQ2Fi8cdgVM-n6v_8XZ5BEimxXI=s160-c-k-c0x00ffffff-no-rj" alt="Chai aur Code">
+                <p>Chai aur Code</p>
+            </a>
+        </div>
+    </aside>
+
+    <!-- Watch Video Container -->
+    <main class="container play-container">
+        <div class="play-row">
+            <!-- Left Main Column (Video & Player, Actions, Details, Comments) -->
+            <div class="play-video">
+                <!-- Video Player Wrapper (YouTube Responsive Player) -->
+                <div class="video-player-container" id="playerContainer">
+                    <!-- Dynamic iframe injected via script.js -->
+                </div>
+
+                <!-- Video Tags -->
+                <div class="tags" id="videoTags">
+                    <!-- Injected dynamically -->
+                </div>
+
+                <!-- Video Title -->
+                <h1 class="video-heading" id="videoTitle">Loading Video...</h1>
+
+                <!-- Publisher Info & User Action Bar -->
+                <div class="play-vid-info">
+                    <div class="publisher">
+                        <img src="" alt="Channel Avatar" class="publisher-avatar" id="channelAvatar">
+                        <div class="publisher-meta">
+                            <h4 id="channelTitle">Channel Name</h4>
+                            <span id="channelSubs">0 Subscribers</span>
+                        </div>
+                        <button class="subscribe-btn" id="subscribeBtn">Subscribe</button>
+                    </div>
+
+                    <div class="play-vid-actions">
+                        <!-- Like / Dislike Pill Group -->
+                        <div class="like-dislike-group">
+                            <button class="like-btn" id="likeBtn" title="I like this">
+                                <i class="fa-regular fa-thumbs-up"></i>
+                                <span id="likeCount">0</span>
+                            </button>
+                            <span class="like-dislike-divider"></span>
+                            <button class="dislike-btn" id="dislikeBtn" title="I dislike this">
+                                <i class="fa-regular fa-thumbs-down"></i>
+                            </button>
+                        </div>
+
+                        <!-- Share Button -->
+                        <button class="btn-pill" id="shareBtn" title="Share Video">
+                            <i class="fa-solid fa-share"></i> Share
+                        </button>
+
+                        <!-- Save / Watch Later Button -->
+                        <button class="btn-pill" id="saveBtn" title="Save to Watch Later">
+                            <i class="fa-regular fa-bookmark"></i> Save
+                        </button>
+
+                        <!-- Download Button -->
+                        <button class="btn-pill" onclick="showToast('Video download queued in HD quality', 'fa-download')" title="Download for offline viewing">
+                            <i class="fa-solid fa-arrow-down"></i> Download
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Video Description Box -->
+                <div class="vid-description">
+                    <p class="desc-stats" id="descStats">0 views &bull; Just now</p>
+                    <p class="desc-text collapsed" id="descText">Video description loading...</p>
+                    <span class="desc-toggle-btn" id="descToggle">...Show more</span>
+                </div>
+
+                <!-- Comments Section -->
+                <section class="comment-section">
+                    <div class="comment-header">
+                        <h3 id="commentCountHeader">Comments</h3>
+                        <button class="comment-sort-btn">
+                            <i class="fa-solid fa-arrow-down-short-wide"></i> Sort by
+                        </button>
+                    </div>
+
+                    <!-- Add Comment Form -->
+                    <div class="comment-input-box">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Virat_Kohli_in_New_Delhi_in_December_2018.jpg" alt="User Profile" class="user-comment-avatar">
+                        <div class="comment-field-wrapper">
+                            <input type="text" placeholder="Add a public comment..." class="comment-input-field" id="commentInputField">
+                            <div class="comment-buttons" id="commentButtons">
+                                <button type="button" class="btn-cancel" id="commentCancelBtn">Cancel</button>
+                                <button type="button" class="btn-submit-comment" id="commentSubmitBtn" disabled>Comment</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Existing & New Comments List -->
+                    <div class="comment-list" id="commentList">
+                        <!-- Injected dynamically via script.js -->
+                    </div>
+                </section>
+            </div>
+
+            <!-- Right Sidebar: Suggested Videos Playlist -->
+            <aside class="right-sidebar">
+                <!-- Dynamically populated via script.js -->
+            </aside>
+        </div>
+    </main>
+
+    <!-- Share Modal -->
+    <div class="modal-overlay" id="shareModal">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3>Share Video</h3>
+                <button class="icon-btn" id="closeShareModal"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="share-links-grid">
+                    <a id="shareWhatsApp" target="_blank" rel="noopener noreferrer" class="share-link-item">
+                        <div class="share-icon-circle share-whatsapp"><i class="fa-brands fa-whatsapp"></i></div>
+                        <span>WhatsApp</span>
+                    </a>
+                    <a id="shareTwitter" target="_blank" rel="noopener noreferrer" class="share-link-item">
+                        <div class="share-icon-circle share-twitter"><i class="fa-brands fa-x-twitter"></i></div>
+                        <span>X (Twitter)</span>
+                    </a>
+                    <a id="shareFacebook" target="_blank" rel="noopener noreferrer" class="share-link-item">
+                        <div class="share-icon-circle share-facebook"><i class="fa-brands fa-facebook-f"></i></div>
+                        <span>Facebook</span>
+                    </a>
+                    <a id="shareLinkedIn" target="_blank" rel="noopener noreferrer" class="share-link-item">
+                        <div class="share-icon-circle share-linkedin"><i class="fa-brands fa-linkedin-in"></i></div>
+                        <span>LinkedIn</span>
+                    </a>
+                </div>
+                <div class="copy-link-box">
+                    <input type="text" id="shareLinkInput" readonly value="">
+                    <button class="copy-btn" id="copyShareLinkBtn">Copy Link</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Upload Video Modal -->
+    <div class="modal-overlay" id="uploadVideoModal">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3><i class="fa-solid fa-video" style="color: var(--accent-red); margin-right: 8px;"></i> Upload New Video</h3>
+                <button class="icon-btn" id="closeUploadModal"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <form id="uploadVideoForm">
+                <div class="modal-body">
+                    <div class="modal-form-group">
+                        <label for="newVidTitle">Video Title *</label>
+                        <input type="text" id="newVidTitle" class="modal-form-input" placeholder="e.g. Next.js 15 Full Tutorial" required>
+                    </div>
+                    <div class="modal-form-group">
+                        <label for="newVidChannel">Channel Name</label>
+                        <input type="text" id="newVidChannel" class="modal-form-input" placeholder="Your Channel Name (Default: You)">
+                    </div>
+                    <div class="modal-form-group">
+                        <label for="newVidCategory">Category</label>
+                        <select id="newVidCategory" class="modal-form-select">
+                            <option value="Web Development">Web Development</option>
+                            <option value="Python">Python</option>
+                            <option value="JavaScript">JavaScript</option>
+                            <option value="AI & ML">AI & ML</option>
+                            <option value="C++">C++</option>
+                            <option value="Git">Git</option>
+                        </select>
+                    </div>
+                    <div class="modal-form-group">
+                        <label for="newVidUrl">YouTube Video URL or Video ID *</label>
+                        <input type="text" id="newVidUrl" class="modal-form-input" placeholder="https://www.youtube.com/watch?v=... or Video ID" required>
+                    </div>
+                    <div class="modal-form-group">
+                        <label for="newVidThumbnail">Thumbnail Image URL (Optional)</label>
+                        <input type="url" id="newVidThumbnail" class="modal-form-input" placeholder="Leave empty for auto-generated YouTube thumbnail">
+                    </div>
+                    <div class="modal-form-group">
+                        <label for="newVidDuration">Duration</label>
+                        <input type="text" id="newVidDuration" class="modal-form-input" placeholder="e.g. 14:20">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-cancel" id="cancelUploadBtn">Cancel</button>
+                    <button type="submit" class="btn-submit-comment">Publish Video</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Voice Search Modal -->
+    <div class="modal-overlay" id="voiceSearchModal">
+        <div class="modal-card" style="max-width: 400px;">
+            <div class="modal-header">
+                <h3>Voice Search</h3>
+                <button class="icon-btn" id="closeVoiceModal"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="voice-modal-content">
+                <div class="voice-pulse-ring">
+                    <i class="fa-solid fa-microphone"></i>
+                </div>
+                <h4 class="voice-status-text" id="voiceStatus">Listening...</h4>
+                <p class="voice-recognized-text" id="voiceRecognized">Say something like "Python" or "React"</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- JavaScript Application Logic -->
+    <script src="script.js"></script>
+</body>
+</html>
