@@ -1396,12 +1396,10 @@ hr.sidebar-divider {
     from {
         opacity: 0;
     }
-
     to {
         opacity: 1;
     }
 }
-
 .modal-card {
     background: #212121;
     border: 1px solid var(--border-color);

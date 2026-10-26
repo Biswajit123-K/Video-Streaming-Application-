@@ -1,8 +1,3 @@
-/**
- * YTube - Video Streaming Platform
- * Complete interactive logic for Homepage, Watch Page, Dynamic Player, Search,
- * Modals, Comments, Likes, Subscriptions, and Voice Search.
- */
 
 // ==========================================
 // 1. Video Data Catalog
